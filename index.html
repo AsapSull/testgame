@@ -1,11 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Flappy POOP</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <canvas id="gameCanvas"></canvas>
+  <div class="game-shell">
+    <div class="hud">
+      <div class="brand">FLAPPY POOP</div>
+      <div class="score-wrap">
+        <span>Score</span>
+        <span id="score">0</span>
+      </div>
+      <div class="score-wrap">
+        <span>Best</span>
+        <span id="bestScore">0</span>
+      </div>
+    </div>
+
+    <div class="canvas-wrap">
+      <canvas id="gameCanvas" width="420" height="640"></canvas>
+
+      <div id="startOverlay" class="overlay visible">
+        <h1>Flappy POOP</h1>
+        <p>Dodge the pipes. Press <strong>Space</strong>, <strong>Click</strong>, or <strong>Tap</strong> to flap.</p>
+        <button id="startBtn">Start Game</button>
+      </div>
+
+      <div id="gameOverOverlay" class="overlay hidden">
+        <h2>Game Over</h2>
+        <p>Your score: <span id="finalScore">0</span></p>
+        <button id="restartBtn">Play Again</button>
+      </div>
+    </div>
+
+    <div class="controls-note">
+      Desktop: Space / Click · Mobile: Tap
+    </div>
+  </div>
+
   <script src="game.js"></script>
 </body>
 </html>
